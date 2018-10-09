@@ -1,0 +1,26 @@
+.list-wrap {
+    padding: 10rem 0;
+    margin: 0 auto;
+}
+.list-item-button {
+    display: block;
+    width: 20rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.6rem;
+    background: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    margin: 0 auto 2rem;
+}
+
+.clock-wrap {
+
+}
+.clock-title {
+
+}
+.clock-time {
+
+}
