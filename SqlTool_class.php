@@ -2,34 +2,40 @@
 
 	class SqlTool{
 		private $conn;
-		private $db = SAE_MYSQL_DB;
-		private $host= SAE_MYSQL_HOST_M;
-        private $dk = SAE_MYSQL_PORT;
-		private $username = SAE_MYSQL_USER;
-		private $password = SAE_MYSQL_PASS;
-	
-	public function __construct(){
-        $this->conn = mysql_connect($this->host.":".$this->dk,$this->username,$this->password);
-		if(empty($this->conn)){
-			die(mysql_error());
-		}
-		mysql_select_db($this->db,$this->conn);
-		mysql_query("set names utf8");
-	}
-	public function execute_dql($sql){
-		$res = mysql_query($sql) or die(mysql_error());
-		return $res;
-	}
-	public function execute_dml($sql){
-		$res = mysql_query($sql) or mysql_error();
-		if(!$res){
-			return 0;
-		}else if(mysql_affected_rows($this->conn)>0){
-			return 1;
-		}else{
-			return 2;
-		}
-	}
+
+    public function __construct(){
+      $user = 'root';
+			$password = 'root';
+			$db = 'vote_information';
+			$host = '127.0.0.1';
+      $port = 8889;
+
+      $this->conn = mysqli_connect(
+        $host,
+        $user,
+        $password,
+        $db,
+        $port
+      );
+      if (empty($this->conn)){
+        die('无法连接数据库服务器').mysqli_error();
+      }
+    }
+    public function execute_dql($sql){
+      $res = mysqli_query($this->conn, $sql) or die(mysqli_error());
+      return $res;
+    }
+    public function execute_dml($sql){
+      $res = mysqli_query($this->conn, $sql) or die(mysqli_error());
+      // return $res;
+      if(!$res){
+        return 0;
+      }else if(mysqli_affected_rows($this->conn)>0){
+        return 1;
+      }else{
+        return 2;
+      }
+    }
 //	分页
 	//$sql1 : 选所有人
 	//$sql2 : 有规则的选
@@ -42,7 +48,7 @@
 			$fenyePage->pageCount = ceil($row[0]/$fenyePage->pageSize);
 		}
 		mysql_free_result($res);
-		
+
 		$res1 = mysql_query($sql2);
 		$arr = array();
 		if(mysql_num_rows($res1)>0){
@@ -53,12 +59,12 @@
 		}
 		mysql_free_result($res1);
 	}
-        
-    
-	
+
+
+
 	public function close_connect(){
 		if(empty($this->conn)){
-			mysql_close($this->conn);
+			mysqli_close($this->conn);
 		}
 	}
 }

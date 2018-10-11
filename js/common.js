@@ -57,6 +57,10 @@ var getUrlParam = function(key) {
 
 };
 
+function formateTime (t) {
+  return '日'
+}
+
 var cssEl = document.createElement('style');
 document.documentElement.firstElementChild.appendChild(cssEl);
 var setPxPerRem = function () {

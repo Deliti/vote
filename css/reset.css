@@ -19,3 +19,6 @@ q:before,q:after{content:"";}
 blockquote,q{quotes:"" "";}
 img {border: medium none;}
 a{text-decoration: none;color: #000000;}
+
+.hide {display: none;}
+.show {display: block;}
