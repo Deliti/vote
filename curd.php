@@ -76,8 +76,9 @@
       public function getScore($params) // 查询投票节目数据
       {
         $type = $params['type'];
+        $voteType = $params['voteType'];
         // $sql = "select vote_program.* from vote_program left join vote_record on vote_program.p_id = vote_record.vote_id where gold_type = $type order by vote_program.id asc";
-        $sql = "select t3.*,ifnull( t2.cnt,0) as count from (select vote_id, count(1) as cnt from vote_record t1 group by vote_id) t2 right join vote_program t3 on t2.vote_id = t3.id where t3.gold_type = $type order by t3.id asc";
+        $sql = "select t3.*,ifnull( t2.cnt,0) as count from (select vote_id, count(1) as cnt from vote_record t1 where t1.vote_type = $voteType group by vote_id) t2 right join vote_program t3 on t2.vote_id = t3.id where t3.gold_type = $type order by t3.id asc";
         $res = $this -> query_data($sql);
         $sql1 = "select count(1) as count from vote_record where 1";
         $res1 = $this -> query_count($sql1);
@@ -226,6 +227,7 @@
       {
         $SqlTool = new SqlTool();
         $voteId = $params['voteId'];
+        $voteType = $params['voteType'];
         if (!isset($_SESSION['openId'])) {
           return array(
             'result' => 10,
@@ -265,7 +267,7 @@
           );
         } else {
           $voteTime = time();
-          $sql = "insert into vote_record(open_ID, vote_time, vote_id) values('$openId', '$voteTime', '$voteId')";
+          $sql = "insert into vote_record(open_ID, vote_time, vote_id, vote_type) values('$openId', '$voteTime', '$voteId', '$voteType')";
           $res = $SqlTool->execute_dml($sql);
           $SqlTool->close_connect();
           if ($res == 1) {

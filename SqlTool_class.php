@@ -7,9 +7,10 @@
       $user = 'root';
 			$password = 'root';
 			$db = 'vote_information';
-			$host = '127.0.0.1';
-      $port = 8889;
-
+			$host = '193.112.134.138';
+      $port = 3306;
+      // $host = '127.0.0.1';
+      // $port = 8889;
       $this->conn = mysqli_connect(
         $host,
         $user,

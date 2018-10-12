@@ -1,5 +1,6 @@
 $(function() {
-  var type = getUrlParam('type') || 1;
+  var type = getUrlParam('type') || 0;
+  var voteType =  getUrlParam('voteType') || 0;
   console.log(type)
   initData()
   initAction()
@@ -21,7 +22,7 @@ $(function() {
       //上滑
       console.log('y', Y);
       if (Y < -100) {
-        location.replace('./vote.html?type=' + type)
+        location.replace('./vote.html?type=' + type + '&voteType=' + voteType)
       }
     });
   }

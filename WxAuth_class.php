@@ -32,7 +32,7 @@
       // $access_token = $arr["access_token"];
       // $openid = $arr["openid"];
       $access_token = "lalalalalall";
-      $openid = "admindml";
+      $openid = "admin";
       return array(
         'access_token' => $access_token,
         'openid' => $openid

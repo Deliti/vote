@@ -1,5 +1,6 @@
 $(function() {
-  var type = getUrlParam('type') || 1;
+  var type = getUrlParam('type') || 0;
+  var voteType =  getUrlParam('voteType') || 0;
   var voteId = ""
   initData()
   initAction()
@@ -28,7 +29,8 @@ $(function() {
         return false
       }
       var params = {
-        voteId: voteId
+        voteId: voteId,
+        voteType: voteType
       }
       // todo 投票接口
       ajaxRequest('voteProgram', params, function(data) {
@@ -51,7 +53,8 @@ $(function() {
   // 私有函数
   function getScoreList() {
     var params = {
-      type: type
+      type: type,
+      voteType: voteType
     }
     ajaxRequest('getScore', params, function(data) {
       if (data.result != 0) {
