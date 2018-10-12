@@ -65,7 +65,7 @@ $(function() {
       var totalCount = data.content.totalCount
       var html = ''
       $.each(list, function (index, item) {
-        html += '<section class="vote-item" data-id="' + item.p_id + '"><pre>' + index + '</pre><div class="head-wrap">' + item.name + '</div><div class="process-wrap"><div class="process" style="right:' + ((totalCount - item.count)/totalCount).toFixed(2)*100 + '%;"></div></div><em>' + item.count + '票</em></section>'
+        html += '<section class="vote-item" data-id="' + item.p_id + '"><pre>' + (index+1) + '</pre><div class="head-wrap">' + item.name + '</div><div class="process-wrap"><div class="process" style="right:' + ((totalCount - item.count)/totalCount).toFixed(2)*100 + '%;"></div></div><em>' + item.count + '票</em></section>'
       })
       html += '<div class="block"></div>'
       $('.vote-wrap').empty()

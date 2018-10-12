@@ -6,7 +6,7 @@ $(function() {
   initAction()
 
   function initData() {
-
+    getSysTime()
   }
 
   function initAction() {
@@ -25,5 +25,22 @@ $(function() {
         location.replace('./vote.html?type=' + type + '&voteType=' + voteType)
       }
     });
+  }
+
+  function getSysTime () {
+    ajaxRequest('getSysTime', {type: 'sign'}, function(data) {
+      if (data.result != 0) {
+        console.log(data.desc || "未知错误")
+        return false
+      }
+      var nowTime = data.content.nowTime
+      var endTime = data.content.endTime
+      var date = formateTime(endTime - nowTime)
+      if (nowTime - endTime > 0){
+        $('.info-title').hide()
+      } else {
+        $('.info-clock').text(date.day+'天')
+      }
+    })
   }
 })

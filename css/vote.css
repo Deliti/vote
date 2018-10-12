@@ -1,3 +1,11 @@
+.page {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: url('../images/sec_bg.png') no-repeat center center;
+  background-size: cover;
+  color: #000000;
+}
 .vote-wrap {
   padding: 0 1rem;
   width: 100%;
@@ -16,15 +24,21 @@
 }
 
 .vote-wrap .vote-item .head-wrap {
-  width: 8rem;
+  width: 10rem;
   margin-right: 1rem;
+}
+.vote-item em {
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  color: #eb0d0d;
 }
 
 .process-wrap {
   flex: 1;
   height: 2rem;
-  background: grey;
+  background: #ffffff;
   box-sizing: border-box;
+  border-radius: 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -33,7 +47,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: red;
+  background: skyblue;
   right: 100%;
   top: 0;
 }

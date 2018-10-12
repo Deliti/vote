@@ -20,16 +20,16 @@
         $port
       );
       if (empty($this->conn)){
-        die('无法连接数据库服务器').mysqli_error();
+        die('无法连接数据库服务器').mysqli_error($this->conn);
       }
       mysqli_query($this->conn, 'set names utf8');
     }
     public function execute_dql($sql){
-      $res = mysqli_query($this->conn, $sql) or die(mysqli_error());
+      $res = mysqli_query($this->conn, $sql) or die(mysqli_error($this->conn));
       return $res;
     }
     public function execute_dml($sql){
-      $res = mysqli_query($this->conn, $sql) or die(mysqli_error());
+      $res = mysqli_query($this->conn, $sql) or die(mysqli_error($this->conn));
       // return $res;
       if(!$res){
         return 0;

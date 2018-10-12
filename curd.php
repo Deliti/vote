@@ -111,7 +111,7 @@
       {
         $nowTime = time();
         // $voteStartTime = '2018-10-14 20:00:00';
-        $voteStartTime = '2018-9-14 20:00:00';
+        $voteStartTime = '2018-10-14 20:00:00';
         $voteEndTime = '2018-10-14 21:00:00';
         $signTime = '2018-11-11 21:00:00';
         if ($params['type'] == 'vote') {
@@ -143,6 +143,17 @@
       {
         $SqlTool = new SqlTool();
         $wx = new WxAuth();
+        if ($_SESSION['openId']) {
+          $resUserInfo = $this -> getUserInfo();
+          if ($resUserInfo['result'] == 0) {
+            return array(
+              'result' => 0,
+              'content' => $resUserInfo['content']
+            );
+          } else {
+            return $resUserInfo;
+          }
+        }
         $wxRes = $wx -> getOpenId($params['code']);
         if (!$wxRes['openid']) {
           return array(

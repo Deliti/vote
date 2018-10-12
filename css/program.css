@@ -1,8 +1,68 @@
+@keyframes jump
+{
+  0%   {bottom: 2rem;}
+  100% {bottom: 1.5rem;}
+}
+
+@-moz-keyframes jump /* Firefox */
+{
+  0%   {bottom: 2rem;}
+  100% {bottom: 1.5rem;}
+}
+
+@-webkit-keyframes jump /* Safari 和 Chrome */
+{
+  0%   {bottom: 2rem;}
+  100% {bottom: 1.5rem;}
+}
+
+@-o-keyframes jump /* Opera */
+{
+  0%   {bottom: 2rem;}
+  100% {bottom: 1.5rem;}
+}
 .page {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;top: 0;
-    right: 0;bottom: 0;
-    z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.info-wrap {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10rem 0 0;
+  text-align: center;
+}
+.info-title {
+  font-size: 1.8rem;
+}
+.info-title span {
+  font-size: 2rem;
+}
+.button-1 {
+  display: inline-block;
+}
+.button-1 button {
+  width: 10rem;
+  height: 2rem;
+}
+.button-2 {
+  position: absolute;
+  left: 0;bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+.button-2 .arrow-down {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  background: red;
+  position: absolute;
+  left: 0;bottom: 1.5rem;
+  animation: jump 1s linear 0s infinite;
 }

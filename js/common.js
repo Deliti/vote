@@ -23,7 +23,7 @@ var ajaxRequest = function(cmdName, params, callBack) {
     });
 };
 
-var ajaxSyncRequest = function(cmdName, parment, callBack) {
+var ajaxSyncRequest = function(cmdName, params, callBack) {
     var paramsData = new Cmd(cmdName, params);
     $.ajax({
         url: apiPath,
@@ -57,8 +57,18 @@ var getUrlParam = function(key) {
 
 };
 
-function formateTime (t) {
-  return '日'
+function formateTime (time) {
+  var date = {
+    day: 0,
+    hour: 0,
+    minute: 0,
+    second: 0
+  }
+  date.day = Math.floor(time / 86400);
+  date.hour = Math.floor(time % 86400 / 3600);
+  date.minute = Math.floor(time % 86400 % 3600 / 60);
+  date.second = Math.floor(time % 86400 % 3600 % 60);
+  return date
 }
 
 var cssEl = document.createElement('style');
