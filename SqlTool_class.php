@@ -7,7 +7,8 @@
       $user = 'root';
 			$password = 'root';
 			$db = 'vote_information';
-			$host = '193.112.134.138';
+      $host = '193.112.134.138';
+      // $host = '127.0.0.1';
       $port = 3306;
       // $host = '127.0.0.1';
       // $port = 8889;
@@ -21,6 +22,7 @@
       if (empty($this->conn)){
         die('无法连接数据库服务器').mysqli_error();
       }
+      mysqli_query($this->conn, 'set names utf8');
     }
     public function execute_dql($sql){
       $res = mysqli_query($this->conn, $sql) or die(mysqli_error());

@@ -4,11 +4,11 @@
   $openId = "whywhy";
   $voteTime = time();
   $voteId = 1;
-  // $sql = "select vote_program.* from vote_program left join vote_record on vote_program.p_id = vote_record.vote_id where gold_type = 1 order by vote_program.id asc";
+  $sql = "select vote_program.* from vote_program left join vote_record on vote_program.p_id = vote_record.vote_id where gold_type = 1 order by vote_program.id asc";
   // $sql = "select open_ID from user where open_ID = zailaiyici";
-  $sql = "insert into vote_record(open_ID, vote_time, vote_id) values('$openId', '$voteTime', '$voteId')";
-  $res = $SqlTool->execute_dml($sql);
-  // $array = $res -> fetch_all(MYSQLI_ASSOC);
+  // $sql = "insert into vote_record(open_ID, vote_time, vote_id) values('$openId', '$voteTime', '$voteId')";
+  $res = $SqlTool->execute_dql($sql);
+  $array = $res -> fetch_all(MYSQLI_ASSOC);
   // $SqlTool = new SqlTool();
   //       $res = $SqlTool->execute_dql($sql);
   //       $array = $res -> fetch_all(MYSQLI_ASSOC);
@@ -41,5 +41,5 @@
   //     }else{
   //       echo 2;
   //     }
-  echo $res;
+  echo count($array);
 ?>
