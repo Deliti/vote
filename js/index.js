@@ -6,20 +6,37 @@ var startTime
 $(function () {
     initData()
     initAction()
-
+    setShare()
+    
     function initData () {
       var params = {
         code: code
       }
-      ajaxRequest('login', params, function (data) {
-        if (data.result != 0) {
-          console.log(data.desc || "未知错误")
-          return false
-        }
-        localStorage['userInfo'] = JSON.stringify(data.content);
-        getSysTime()
-        $.get('../images/rule.jpeg');
-      })
+      var wxInfo = localStorage['wxInfo'] || "{}";
+      wxInfo = JSON.parse(wxInfo)
+      if (wxInfo.subscribe != 1) {
+        ajaxRequest('login', params, function (data) {
+          if (data.result != 0) {
+            alert(data.desc || "未知错误")
+            return false
+          }
+          if (data.content.wxUserInfo) {
+            var wxInfo = data.content.wxUserInfo
+            localStorage['userInfo'] = JSON.stringify(data.content.recordInfo);
+            if (wxInfo.subscribe != 1) { // 跳转关注公众号
+              // 这里会有偏差，所以跳转前重新确认一下
+              location.replace('https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU0NTE3Njg4OA==#wechat_redirect')
+            } else {
+              localStorage['wxInfo'] = JSON.stringify(data.content.wxUserInfo);
+            }
+          } else {
+            location.replace('https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU0NTE3Njg4OA==#wechat_redirect')
+          }
+          $.get('../images/rule.jpeg');
+        })
+      }
+      getSysTime()
+      
     }
 
     function initAction () {
@@ -29,7 +46,7 @@ $(function () {
     function getSysTime () {
       ajaxRequest('getSysTime', {type: 'vote'}, function(data) {
         if (data.result != 0) {
-          console.log(data.desc || "未知错误")
+          alert(data.desc || "未知错误")
           return false
         }
         var nowTime = data.content.nowTime

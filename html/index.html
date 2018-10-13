@@ -8,6 +8,12 @@
   <title>舞动星球</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/index.css">
+  <style>
+    .testbutton {
+      position: absolute;
+      left: 0;bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,13 +26,19 @@
     </section>
     <div class="clock-wrap">
       <p class="clock-title">投票倒计时</p>
-      <p class="clock-time">2天1时12分28秒</p>
+      <p class="clock-time"></p>
     </div>
+    <button class="testbutton">测试按钮</button>
   </div>
 
 </body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script src="../js/jquery.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/index.js"></script>
-
+<script>
+  $('.testbutton').on('click', function () {
+    localStorage.clear()
+  })
+</script>
 </html>

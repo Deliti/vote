@@ -53,19 +53,19 @@
 }
 
 .block {
-  height: 4rem;
+  height: 6rem;
 }
 
 .submit-wrap {
   width: 100%;
-  height: 4rem;
+  height: 6rem;
   border-top: 1px solid #000000;
   background: #ffffff;
   box-sizing: border-box;
   position: fixed;
   left: 0;
   bottom: 0;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 .submit-content {
   display: flex;
@@ -80,13 +80,16 @@
   line-height: 2rem;
 }
 
-.mark {}
+.mark {
+  color: #187dbc;
+  font-size: 2rem;
+}
 
 .submit-button {
-  width: 4rem;
+  padding: 0 2rem;
   height: 3rem;
   text-align: center;
-  font-size: 2rem;
+  /* font-size: 1rem; */
   box-sizing: border-box;
   border: 1px solid red;
   background: gold;

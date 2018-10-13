@@ -1,45 +1,22 @@
 <?php
-  require_once 'SqlTool_class.php';
-  $SqlTool = new SqlTool();
-  $openId = "whywhy";
-  $voteTime = time();
-  $voteId = 1;
-  $sql = "select vote_program.* from vote_program left join vote_record on vote_program.p_id = vote_record.vote_id where gold_type = 1 order by vote_program.id asc";
-  // $sql = "select open_ID from user where open_ID = zailaiyici";
-  // $sql = "insert into vote_record(open_ID, vote_time, vote_id) values('$openId', '$voteTime', '$voteId')";
-  $res = $SqlTool->execute_dql($sql);
-  $array = $res -> fetch_all(MYSQLI_ASSOC);
-  // $SqlTool = new SqlTool();
-  //       $res = $SqlTool->execute_dql($sql);
-  //       $array = $res -> fetch_all(MYSQLI_ASSOC);
-  //       $SqlTool->close_connect();
-  //       echo $array;
+// public function getWxUserInfo($params)
+// {
+//   $code = $params['code'];
+//   $appid = "wx3d87ebb7df88b56c";  
+//   $secret = "e99e3927216ddb4d44e2a01285d7fec0";  
+//   //第一步:取得openid
+//   $oauth2Url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&secret=$secret&code=$code&grant_type=authorization_code";
+//   $oauth2 = getJson($oauth2Url);
+    
+//   //第二步:根据全局access_token和openid查询用户信息  
+//   $access_token = $oauth2["access_token"];  
+//   $openid = $oauth2['openid'];  
+//   $get_user_info_url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=$access_token&openid=$openid&lang=zh_CN";
+//   $userinfo = getJson($get_user_info_url);
+  
+//   //打印用户信息
+//     return $userinfo;
+// }
+ 
 
-  //   $user = 'root';
-  //   $password = 'root';
-  //   $db = 'vote_information';
-  //   $host = '127.0.0.1';
-  //   $port = 8889;
-
-  //   $conn = mysqli_connect(
-  //     $host,
-  //     $user,
-  //     $password,
-  //     $db,
-  //     $port
-  //   );
-  //   echo '23';
-  //   $sql1 = "select count(1) as count from vote_record where 1";
-  //   $res1 = mysqli_query($conn, $sql) or die(mysqli_error());
-  //   echo $res1;
-  //   $res = mysqli_query($conn, $sql) or die(mysqli_error());
-  //     // return $res;
-  //     if(!$res){
-  //       echo 0;
-  //     }else if(mysqli_affected_rows($conn)>0){
-  //       echo 1;
-  //     }else{
-  //       echo 2;
-  //     }
-  echo count($array);
 ?>

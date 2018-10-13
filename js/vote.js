@@ -4,7 +4,7 @@ $(function() {
   var voteId = ""
   initData()
   initAction()
-
+  setShare()
   function initData() {
     getScoreList()
   }
@@ -32,19 +32,21 @@ $(function() {
         voteId: voteId,
         voteType: voteType
       }
-      // todo 投票接口
       ajaxRequest('voteProgram', params, function(data) {
         if (data.result != 0) {
-          console.log(data.desc || "未知错误")
+          alert(data.desc || "未知错误")
           return false
         }
+        getScoreList()
         ajaxRequest('getUserInfo', {}, function (resp) {
           if (resp.result != 0) {
-            console.log(resp.desc || "未知错误")
+            alert(resp.desc || "未知错误")
             return false
           }
+          $('.submit-wrap').hide();
           localStorage['userInfo'] = JSON.stringify(resp.content);
-          location.href = './result.html'
+          // location.href = './result.html'
+          alert("投票成功")
         })
       })
     })
@@ -58,7 +60,7 @@ $(function() {
     }
     ajaxRequest('getScore', params, function(data) {
       if (data.result != 0) {
-        console.log(data.desc || "未知错误")
+        alert(data.desc || "未知错误")
         return false
       }
       var list = data.content.list
@@ -70,16 +72,6 @@ $(function() {
       html += '<div class="block"></div>'
       $('.vote-wrap').empty()
       $('.vote-wrap').html(html)
-    })
-  }
-
-  function getSysTime () {
-    ajaxRequest('getSysTime', {type: 'vote'}, function(data) {
-      if (data.result != 0) {
-        console.log(data.desc || "未知错误")
-        return false
-      }
-      console.log(data)
     })
   }
 })

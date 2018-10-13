@@ -71,11 +71,65 @@ function formateTime (time) {
   return date
 }
 
-var cssEl = document.createElement('style');
-document.documentElement.firstElementChild.appendChild(cssEl);
-var setPxPerRem = function () {
-	var dpr = 1;
-	var pxPerRem = document.documentElement.clientWidth*dpr/100;
-	cssEl.innerHTML = 'html{font-size:'+ pxPerRem +'px!important;}';
+// var cssEl = document.createElement('style');
+// document.documentElement.firstElementChild.appendChild(cssEl);
+// var setPxPerRem = function () {
+// 	var dpr = 1;
+// 	var pxPerRem = document.documentElement.clientWidth*dpr/100;
+// 	cssEl.innerHTML = 'html{font-size:'+ pxPerRem +'px!important;}';
+// }
+// setPxPerRem();
+
+function setShare () {
+  var url = encodeURIComponent(location.href.split('#')[0])
+  ajaxRequest('getShare', {
+      url: url
+  }, function (data) {
+    if (data.result != 0) {
+        alert(data.desc || "未知错误")
+        return false
+    }
+    var wxInfo = data.content
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: wxInfo.appId, // 必填，公众号的唯一标识
+        timestamp: wxInfo.timestamp, // 必填，生成签名的时间戳
+        nonceStr: wxInfo.nonceStr, // 必填，生成签名的随机串
+        signature: wxInfo.signature,// 必填，签名
+        jsApiList: [
+            "onMenuShareAppMessage",
+            "onMenuShareTimeline"
+        ] // 必填，需要使用的JS接口列表
+    });
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            title:"舞动星球给你喜欢的节目投票", // 分享标题(展示分享码)
+            desc:"舞动星球给你喜欢的节目投票！", // 分享描述(展示分享码)
+            link:  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect", // 分享链接
+            imgUrl: "http://zhgbdstxmjj.yilianservice.com/vote/images/logo.jpeg", // 分享图标
+            success: function () { 
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        
+        //分享好友
+        wx.onMenuShareAppMessage({
+            title:"舞动星球给你喜欢的节目投票", // 分享标题(展示分享码)
+            desc:"舞动星球给你喜欢的节目投票！", // 分享描述(展示分享码)
+            link:  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect", // 分享链接
+            imgUrl: "http://zhgbdstxmjj.yilianservice.com/vote/images/logo.jpeg", 
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () { 
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    });
+  })
 }
-setPxPerRem();

@@ -2,3 +2,71 @@
 2. 服务器的时间
 3. 投票（改）
 4. 投票结果
+
+
+<!-- https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect -->
+
+<!-- https://open.weixin.qq.com/connect/oauth2/authorize?
+appid=wx3d87ebb7df88b56c
+&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html
+&response_type=code&scope=snsapi_base&state=123#wechat_redirect -->
+
+
+firsttoken
+14_Qla1zHdyZ06QpfcY48DWFR1m3d-uf4d2T8c4gYaMmwxIvlLWiI-J15jKGdI7e5aT9vVi-B_4a9Bd2VKwLLC84g
+freshToken
+14_uLuTRMZaK1s_YC1Y8D8UyvwDYPyL1ZeCa6BJZdMjdRVFbGTBNA8EZX3b3_PW-BM9qUIgvEEh2WGoewSaEnL_hQ
+diyibu14_uLuTRMZaK1s_YC1Y8D8UyvwDYPyL1ZeCa6BJZdMjdRVFbGTBNA8EZX3b3_PW-BM9qUIgvEEh2WGoewSaEnL_hQ1
+di3bu{"openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","access_token":"14_Qla1zHdyZ06QpfcY48DWFR1m3d-uf4d2T8c4gYaMmwxIvlLWiI-J15jKGdI7e5aT9vVi-B_4a9Bd2VKwLLC84g","expires_in":7200,"refresh_token":"14_uLuTRMZaK1s_YC1Y8D8UyvwDYPyL1ZeCa6BJZdMjdRVFbGTBNA8EZX3b3_PW-BM9qUIgvEEh2WGoewSaEnL_hQ","scope":"snsapi_base,snsapi_userinfo,"}
+
+
+firsttoken
+14_zo19OhvYH5fqEaC2b96uLtVNkvOOip85AnoBd0EIofyq_pM4I0FvfJlR1-J-o2d3pieSJJ3qFgiRDO0w7vm1IA
+freshJson{"access_token":"14_zo19OhvYH5fqEaC2b96uLtVNkvOOip85AnoBd0EIofyq_pM4I0FvfJlR1-J-o2d3pieSJJ3qFgiRDO0w7vm1IA","expires_in":7200,"refresh_token":"14_N6LJc3sN0Sy1mDvJUYgIAvttuH1E3InHEhv7fWzaqgKuLu4XkDDSK6W--kgy514T9o9DICv9HjeKA0Oy0rjCNg","openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","scope":"snsapi_userinfo"}end
+进来了14_zo19OhvYH5fqEaC2b96uLtVNkvOOip85AnoBd0EIofyq_pM4I0FvfJlR1-J-o2d3pieSJJ3qFgiRDO0w7vm1IA
+写好了{
+    "expire_time": 0
+}
+离开了
+14_zo19OhvYH5fqEaC2b96uLtVNkvOOip85AnoBd0EIofyq_pM4I0FvfJlR1-J-o2d3pieSJJ3qFgiRDO0w7vm1IA
+sectoken
+14_zo19OhvYH5fqEaC2b96uLtVNkvOOip85AnoBd0EIofyq_pM4I0FvfJlR1-J-o2d3pieSJJ3qFgiRDO0w7vm1IA
+{"result":0,"content":{"wxUserInfo":"{\"errcode\":40001,\"errmsg\":\"invalid credential, access_token is invalid or not latest hint: [pk06598876!]\"}","recordInfo":{"id":"5","open_ID":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","vote_time":"1539398981","vote_id":"5","vote_type":"1"}},"desc":"\u8bf7\u6c42\u6210\u529f"}
+
+
+firsttoken
+14_fMHepezTnHIHWAmf_3lPd988gr4jj3J1TtGx033_4RjBtpCF40tCumtFdZnnYaEDB1_mo8aJUoHjBTlLZX4S7Q
+freshJson{"access_token":"14_fMHepezTnHIHWAmf_3lPd988gr4jj3J1TtGx033_4RjBtpCF40tCumtFdZnnYaEDB1_mo8aJUoHjBTlLZX4S7Q","expires_in":7200,"refresh_token":"14_8geC_Thv3SWQNa7px6Faij20K3yU9xeDzvwlZJ1u1PUFhWbmwOff9-Bf6Gf9VeNikh6EVLhDSSPdhn5tIDWe0g","openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","scope":"snsapi_userinfo"}end
+拿到的
+14_8geC_Thv3SWQNa7px6Faij20K3yU9xeDzvwlZJ1u1PUFhWbmwOff9-Bf6Gf9VeNikh6EVLhDSSPdhn5tIDWe0g
+end进来的freshToken
+14_8geC_Thv3SWQNa7px6Faij20K3yU9xeDzvwlZJ1u1PUFhWbmwOff9-Bf6Gf9VeNikh6EVLhDSSPdhn5tIDWe0g
+进来了
+14_8geC_Thv3SWQNa7px6Faij20K3yU9xeDzvwlZJ1u1PUFhWbmwOff9-Bf6Gf9VeNikh6EVLhDSSPdhn5tIDWe0g
+写好了{
+    "expire_time": 0
+}离开了
+14_8geC_Thv3SWQNa7px6Faij20K3yU9xeDzvwlZJ1u1PUFhWbmwOff9-Bf6Gf9VeNikh6EVLhDSSPdhn5tIDWe0g
+sectoken14_8geC_Thv3SWQNa7px6Faij20K3yU9xeDzvwlZJ1u1PUFhWbmwOff9-Bf6Gf9VeNikh6EVLhDSSPdhn5tIDWe0g
+{"result":0,"content":{"wxUserInfo":"{\"errcode\":40001,\"errmsg\":\"invalid credential, access_token is invalid or not latest hint: [s9WFoA02228878!]\"}","recordInfo":{"id":"5","open_ID":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","vote_time":"1539398981","vote_id":"5","vote_type":"1"}},"desc":"\u8bf7\u6c42\u6210\u529f"}
+
+
+firsttoken14_697VfQsfs28X-bP3qx68Ts_RBrQLLlQRp_deALZtdFAHz2U0jaYjvtPnEXtUqnqjXZdZQCtoFYU5de0qwnIbjAfreshJson{"access_token":"14_697VfQsfs28X-bP3qx68Ts_RBrQLLlQRp_deALZtdFAHz2U0jaYjvtPnEXtUqnqjXZdZQCtoFYU5de0qwnIbjA","expires_in":7200,"refresh_token":"14_-FBwcYUIzj8Zzi2QheIe0ctodjabMKOZLFAMWSIOHmIzEU_-fuwrJ8kUQf3xz5ndSHgToMn-pEwLY0v_DAr9Eg","openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","scope":"snsapi_userinfo"}end
+拿到的
+14_-FBwcYUIzj8Zzi2QheIe0ctodjabMKOZLFAMWSIOHmIzEU_-fuwrJ8kUQf3xz5ndSHgToMn-pEwLY0v_DAr9Eg end
+进来的freshToken
+14_-FBwcYUIzj8Zzi2QheIe0ctodjabMKOZLFAMWSIOHmIzEU_-fuwrJ8kUQf3xz5ndSHgToMn-pEwLY0v_DAr9Eg
+离开了
+sectoken{"result":0,"content":{"wxUserInfo":"{\"errcode\":41001,\"errmsg\":\"access_token missing hint: [kQ9.Aa08614682!]\"}","recordInfo":{"id":"5","open_ID":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","vote_time":"1539398981","vote_id":"5","vote_type":"1"}},"desc":"\u8bf7\u6c42\u6210\u529f"}
+
+firsttoken14_7UQ6KNkh3LIwoiOlYMlNUR-_kxC0d9SerKlIhDhz9Jbi2sxSV0bL0FOrIAGi7fT24YrJsHlK_QLQ_3y04_ia6gfreshJson{"access_token":"14_7UQ6KNkh3LIwoiOlYMlNUR-_kxC0d9SerKlIhDhz9Jbi2sxSV0bL0FOrIAGi7fT24YrJsHlK_QLQ_3y04_ia6g","expires_in":7200,"refresh_token":"14_zEK6S5gmnPpcjk3UBsZgdYYVjbbPOTXpeyikR1N-UrjrvzfyVCWYYXmYD3_88xhwz9iqY8lYZ_aaMHOdeewNVg","openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","scope":"snsapi_userinfo"}end拿到的14_zEK6S5gmnPpcjk3UBsZgdYYVjbbPOTXpeyikR1N-UrjrvzfyVCWYYXmYD3_88xhwz9iqY8lYZ_aaMHOdeewNVgend进来的freshToken14_zEK6S5gmnPpcjk3UBsZgdYYVjbbPOTXpeyikR1N-UrjrvzfyVCWYYXmYD3_88xhwz9iqY8lYZ_aaMHOdeewNVg进来了14_7UQ6KNkh3LIwoiOlYMlNUR-_kxC0d9SerKlIhDhz9Jbi2sxSV0bL0FOrIAGi7fT24YrJsHlK_QLQ_3y04_ia6g写好了{
+    "expire_time": 0
+}
+离开了
+14_7UQ6KNkh3LIwoiOlYMlNUR-_kxC0d9SerKlIhDhz9Jbi2sxSV0bL0FOrIAGi7fT24YrJsHlK_QLQ_3y04_ia6gsectoken14_7UQ6KNkh3LIwoiOlYMlNUR-_kxC0d9SerKlIhDhz9Jbi2sxSV0bL0FOrIAGi7fT24YrJsHlK_QLQ_3y04_ia6g
+{"result":0,"content":{"wxUserInfo":"{\"errcode\":40001,\"errmsg\":\"invalid credential, access_token is invalid or not latest hint: [loEs.A05098053!]\"}","recordInfo":{"id":"5","open_ID":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","vote_time":"1539398981","vote_id":"5","vote_type":"1"}},"desc":"\u8bf7\u6c42\u6210\u529f"}
+
+
+
+{"access_token":"14__ToZwjHZGywlENAXLdo3MIS_9H_d9tiyen_2ahHDalSF20aiLB4tle3yWFz9pPI6mNZvHBIfcjwR3MEwvY_wwQ","expires_in":7200,"refresh_token":"14_v35il0yIil2EQJG9w5G4721cRYB-UiL0ymdS2NweggXZmhNQZxB_iuIcWN8xuVQ7_nsC5t2AgUor37lPuCowAA","openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","scope":"snsapi_userinfo"}
+14_pOy9R5CF9GooPvHC8ZCjfotEAW1ydZQuLSDE1XXvQ3fH8A16mLbrwsclx0iCl3di9Dr8idqotwAMf354DgFXLyO0S_5W-WYyvcZM19YafSeaxjAcquvbL2Eb3YIGOXgACACKT

@@ -4,7 +4,7 @@ $(function() {
   console.log(type)
   initData()
   initAction()
-
+  setShare()
   function initData() {
     getSysTime()
   }
@@ -30,7 +30,7 @@ $(function() {
   function getSysTime () {
     ajaxRequest('getSysTime', {type: 'sign'}, function(data) {
       if (data.result != 0) {
-        console.log(data.desc || "未知错误")
+        alert(data.desc || "未知错误")
         return false
       }
       var nowTime = data.content.nowTime
