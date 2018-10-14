@@ -8,10 +8,18 @@
   <title>舞动星球</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/vote.css">
+  <style>
+    .tips {
+      color: red;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
   <div class="page">
+    <div class="tips">需要关注公众号才可投票</div>
     <div class="vote-wrap">
       <!-- <section class="vote-item active">
               <pre>1</pre>
@@ -38,5 +46,9 @@
 <script src="../js/jquery.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/vote.js"></script>
-
+<script>
+    $('.testbutton').on('click', function () {
+      localStorage.clear()
+    })
+  </script>
 </html>

@@ -6,6 +6,11 @@ $(function() {
   initAction()
   setShare()
   function initData() {
+    var wxInfo = localStorage['wxInfo'] || "{}";
+    wxInfo = JSON.parse(wxInfo)
+    if (wxInfo.subscribe != 1) {
+      location.replace('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect')
+    }
     getScoreList()
   }
 

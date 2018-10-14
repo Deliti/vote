@@ -97,15 +97,14 @@ function setShare () {
         nonceStr: wxInfo.nonceStr, // 必填，生成签名的随机串
         signature: wxInfo.signature,// 必填，签名
         jsApiList: [
-            "onMenuShareAppMessage",
-            "onMenuShareTimeline"
+            "onMenuShareTimeline",
+            "onMenuShareAppMessage"
         ] // 必填，需要使用的JS接口列表
     });
     wx.ready(function(){
         wx.onMenuShareTimeline({
             title:"舞动星球给你喜欢的节目投票", // 分享标题(展示分享码)
-            desc:"舞动星球给你喜欢的节目投票！", // 分享描述(展示分享码)
-            link:  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect", // 分享链接
+            link:  location.href, // 分享链接
             imgUrl: "http://zhgbdstxmjj.yilianservice.com/vote/images/logo.jpeg", // 分享图标
             success: function () { 
                 // 用户确认分享后执行的回调函数
@@ -117,19 +116,30 @@ function setShare () {
         
         //分享好友
         wx.onMenuShareAppMessage({
-            title:"舞动星球给你喜欢的节目投票", // 分享标题(展示分享码)
-            desc:"舞动星球给你喜欢的节目投票！", // 分享描述(展示分享码)
-            link:  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect", // 分享链接
-            imgUrl: "http://zhgbdstxmjj.yilianservice.com/vote/images/logo.jpeg", 
+            title: '舞动星球给你喜欢的节目投票', // 分享标题
+            desc: '舞动星球给你喜欢的节目投票！', // 分享描述
+            link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: "http://zhgbdstxmjj.yilianservice.com/vote/images/logo.jpeg", // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () { 
-                // 用户确认分享后执行的回调函数
-            },
-            cancel: function () { 
-                // 用户取消分享后执行的回调函数
+            success: function () {
+            // 用户点击了分享后执行的回调函数
             }
         });
+        // wx.onMenuShareAppMessage({
+        //     title:"舞动星球给你喜欢的节目投票", // 分享标题(展示分享码)
+        //     desc:"舞动星球给你喜欢的节目投票！", // 分享描述(展示分享码)
+        //     link:  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect", // 分享链接
+        //     imgUrl: "https://www.baidu.com/img/bd_logo1.png", 
+        //     type: 'link', // 分享类型,music、video或link，不填默认为link
+        //     success: function () { 
+        //         // 用户确认分享后执行的回调函数
+        //         alert('分享成功')
+        //     },
+        //     cancel: function () { 
+        //         // 用户取消分享后执行的回调函数
+        //     }
+        // });
     });
   })
 }
