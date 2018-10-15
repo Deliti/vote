@@ -70,3 +70,27 @@ firsttoken14_7UQ6KNkh3LIwoiOlYMlNUR-_kxC0d9SerKlIhDhz9Jbi2sxSV0bL0FOrIAGi7fT24Yr
 
 {"access_token":"14__ToZwjHZGywlENAXLdo3MIS_9H_d9tiyen_2ahHDalSF20aiLB4tle3yWFz9pPI6mNZvHBIfcjwR3MEwvY_wwQ","expires_in":7200,"refresh_token":"14_v35il0yIil2EQJG9w5G4721cRYB-UiL0ymdS2NweggXZmhNQZxB_iuIcWN8xuVQ7_nsC5t2AgUor37lPuCowAA","openid":"oOBtP07XIb8lpEjp5BN9BWO1SMFo","scope":"snsapi_userinfo"}
 14_pOy9R5CF9GooPvHC8ZCjfotEAW1ydZQuLSDE1XXvQ3fH8A16mLbrwsclx0iCl3di9Dr8idqotwAMf354DgFXLyO0S_5W-WYyvcZM19YafSeaxjAcquvbL2Eb3YIGOXgACACKT
+
+
+acctoken14_IN3sLg55T4hIBBDP-xaxXHB_fNpqE1-uuORBbRP1eVJZHCuclkdonA2NUXKzl-yxHddDSCCoGHd_eCcfFld4H7_JxvHfTIal43U7TIjRaLJrBwIJRpJU-rmgnwvRenbQQ8DSjAfE0lC_2aGOUEMdAJABLT
+
+ticket
+HoagFKDcsGMVCIY2vOjf9t4QNWN4vXcq1boTKkMjHZK0xyXvyCqnck6cjzxO9uiETi376p1DculuT5J_Hr8_jg
+timestamp
+1539447197
+nonceStr
+vQ1fxu7z7yXFQPje
+signature
+b85e66da16a86fe91bf6c0220e5200756204cdd5
+
+wx.config({
+    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    appId: 'wx3d87ebb7df88b56c', // 必填，公众号的唯一标识
+    timestamp: 1539447197, // 必填，生成签名的时间戳
+    nonceStr: 'vQ1fxu7z7yXFQPje', // 必填，生成签名的随机串
+    signature: 'b85e66da16a86fe91bf6c0220e5200756204cdd5',// 必填，签名
+    jsApiList: [
+        "onMenuShareAppMessage",
+        "onMenuShareTimeline"
+    ] // 必填，需要使用的JS接口列表
+});

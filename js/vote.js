@@ -11,6 +11,7 @@ $(function() {
     if (wxInfo.subscribe != 1) {
       location.replace('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect')
     }
+    getVoteInfo()
     getScoreList()
   }
 
@@ -80,3 +81,13 @@ $(function() {
     })
   }
 })
+
+function getVoteInfo () {
+  ajaxRequest('getUserInfo', {}, function(data) {
+    if (data.result != 0) {
+      alert(data.desc || "未知错误")
+      return false
+    }
+    localStorage['userInfo'] = JSON.stringify(data.content);
+  })
+}

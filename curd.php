@@ -152,9 +152,10 @@
        */
       public function getSysTime($params)
       {
+        date_default_timezone_set("Asia/Shanghai"); 
         $nowTime = time();
         // $voteStartTime = '2018-10-14 19:00:00';
-        $voteStartTime = '2018-9-14 19:00:00';
+        $voteStartTime = '2018-10-14 19:00:00';
         $voteEndTime = '2018-10-14 20:00:00';
         $signTime = '2018-11-11 14:00:00';
         if ($params['type'] == 'vote') {

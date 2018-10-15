@@ -18,7 +18,12 @@ var ajaxRequest = function(cmdName, params, callBack) {
             var  dataStr = JSON.stringify(data);
             dataStr=dataStr.replace(new RegExp(":null","gm"),':""');
             var  parseData = $.parseJSON(dataStr) ;
-            callBack(parseData);
+            if (parseData.result == 10) {
+                localStorage.clear()
+                location.replace('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3d87ebb7df88b56c&redirect_uri=http%3A%2F%2Fzhgbdstxmjj.yilianservice.com%2Fvote%2Fhtml%2Findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect')
+            } else {
+                callBack(parseData);
+            }
         }
     });
 };
